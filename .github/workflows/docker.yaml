@@ -61,7 +61,6 @@ jobs:
         with:
           tag_name: ${{ steps.getVersion.outputs.version }}
           release_name: Release ${{ steps.getVersion.outputs.version }}
-          body: false
           draft: false
           prerelease: false
         if: github.ref_name == 'main'
