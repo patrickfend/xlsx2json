@@ -25,6 +25,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Configure git
+        run: |
+          git config user.email "github@noreply.fend.digital"
+          git config user.name "Github Action"
+
       - name: Develop
         run: |
           npm version --no-git-tag-version --preid beta prerelease
