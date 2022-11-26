@@ -38,7 +38,7 @@ jobs:
 
       - name: Main-Version
         run: |
-          npm version minor
+          npm version --no-git-tag-version minor
           git commit -m "update version" package.json
         if: github.ref_name == 'main'
 
