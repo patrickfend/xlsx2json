@@ -40,6 +40,8 @@ jobs:
         run: |
           npm version minor
           git commit -m "update version" package.json
+          git push origin
+          git push origin --tags
         if: github.ref_name == 'main'
 
       - name: Get Version
