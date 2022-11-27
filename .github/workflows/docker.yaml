@@ -93,8 +93,8 @@ jobs:
           tags: |
             type=ref,event=branch
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/main') }}
+            type=raw,value=${{ steps.getVersion.outputs.version }},enable=${{ github.ref == format('refs/heads/main') }}
             type=raw,value=${{ github.event.inputs.refComponents }},enable=${{ github.event.inputs.refComponents != github.ref_name }}
-            type=raw,value=${{ steps.getVersion.outputs.version }},enable=true            
 
       - name: Build and push
         uses: docker/build-push-action@v3
