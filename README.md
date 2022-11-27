@@ -11,7 +11,7 @@ Just send the .xlsx-file via POST to the service and use the field name "`excel`
 </form>
 ```
 ## Example
-The `test.xlsx` in the `examples`folder will be converted to:
+The `test.xlsx` in the `examples` folder will be converted to:
 ```
 {
 	"sheet number one": [
