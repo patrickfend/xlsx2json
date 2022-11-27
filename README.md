@@ -1,6 +1,10 @@
 # xlsx2json
 Webservice to convert Excel-Files to JSON
 
+## Docker
+```
+$ docker pull ghcr.io/patrickfend/xlsx2json:latest
+```
 ## Usage
 Just send the .xlsx-file via POST to the service and use the field name "`excel`"
 
