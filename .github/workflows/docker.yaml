@@ -30,12 +30,6 @@ jobs:
           git config user.email "github@noreply.fend.digital"
           git config user.name "Github Action"
 
-      - name: Develop
-        run: |
-          npm version --no-git-tag-version --preid beta prerelease
-          git commit -m "update version" package.json
-        if: github.ref_name == 'develop'
-
       - name: Main-Version
         run: |
           npm version --no-git-tag-version minor
