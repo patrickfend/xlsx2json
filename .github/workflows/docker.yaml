@@ -57,13 +57,24 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.getVersion.outputs.version }}
           release_name: Release ${{ steps.getVersion.outputs.version }}
           draft: false
           prerelease: false
         if: github.ref_name == 'main'
+
+      - name: Create Pull Request
+        uses: devops-infra/action-pull-request@v0.5.3
+        if: github.ref_name == 'main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: main
+          target_branch: develop
+          title: Release ${{ steps.getVersion.outputs.version }} back to develop
+          body: "**Automated pull request**"
+          ignore_users: "dependabot"
 
       - name: Install NPM-Packages
         run: |
