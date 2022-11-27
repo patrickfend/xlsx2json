@@ -1,4 +1,4 @@
-# simple-xlsx2json-api
+# xlsx2json
 Webservice to convert Excel-Files to JSON
 
 ## Usage
