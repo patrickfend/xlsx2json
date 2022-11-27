@@ -1,7 +1,7 @@
 {
 	"name": "xlsx2json",
 	"description": "convert xlsx to json",
-	"version": "0.3.0-beta.3",
+	"version": "0.3.0-beta.4",
 	"main": "index.js",
 	"author": "Patrick Fend",
 	"license": "MIT",
