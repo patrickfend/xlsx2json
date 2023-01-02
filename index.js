@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
         message: 'No file uploaded'
       });
     } else {
-      let file = xlsx.read(req.files.excel.data)
+      let file = xlsx.read(req.files.excel.data, { cellDates: true })
       let sheets = file.SheetNames
       let data = {}
   
